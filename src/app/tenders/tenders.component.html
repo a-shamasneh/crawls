@@ -1,0 +1,33 @@
+
+<section class="jumbotron ">
+    <div class="container">
+      <div class="row center">
+        <h1 class="jumbotron-heading">Tenders  </h1>
+        <p class="lead text-muted">Tenders From Egypt</p>
+      </div>
+      <br>
+      <div class="row center">
+       <a href="#" class="btn btn-primary">Choose Category</a>
+       <select col-md-2 class="btn btn-secondary" [(ngModel)]="term">
+        <option>All</option>
+        <option  *ngFor="let cat of Categories "
+        >{{cat}}</option>
+      </select>
+    </div>
+    <br><br>
+    <!-- start display deals -->
+    <div class="row">
+      <div  class="col-md-12 center" *ngFor="let tend of All | category: term ">
+       <div class="info">
+        <h3>{{tend.category}}</h3>
+        <p>Country:{{tend.country}}</p>
+        <p>{{tend.desc}}</p> 
+        <p>Deadline:{{tend.deadline}}</p>
+        <p>Refno:{{tend.Refno}}</p>
+        <p>Type:({{tend.type}})</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
